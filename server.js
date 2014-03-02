@@ -31,19 +31,18 @@ app.set('view engine', 'html');
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
+app.use(express.static(path.join(__dirname, 'app')));
+app.use(app.router);
 
 // development only
 if (app.get('env') === 'development') {
   app.use(express.errorHandler());
-  app.use(express.static(path.join(__dirname, 'app')));
 };
 
 // production only
 if (app.get('env') === 'production') {
   app.use(express.errorHandler());
-  app.use(express.static(path.join(__dirname, 'dist')));
 };
-app.use(app.router);
 
 /**
  * Routes
