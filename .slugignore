@@ -1,15 +1,11 @@
 node_modules
-dist
 test
 .tmp
 .sass-cache
-.bowerrc
 .editorconfig
 .gitattributes
 .gitignore
 .jshintrc
 .travis.yml
-bower.json
-Gruntfile.js
 karma-e2e.conf.js
 karma.conf.js
