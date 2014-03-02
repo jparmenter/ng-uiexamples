@@ -28,7 +28,6 @@ var partials = function (req, res) {
 app.set('port', process.env.PORT || 5000);
 app.set('views', __dirname + '/views');
 app.use(express.logger('dev'));
-app.use(express.static(path.join(__dirname, 'app')));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
@@ -36,10 +35,12 @@ app.use(app.router);
 // development only
 if (app.get('env') === 'development') {
   app.use(express.errorHandler());
+  app.use(express.static(path.join(__dirname, 'app')));
 };
 
 // production only
 if (app.get('env') === 'production') {
+  app.use(express.static(path.join(__dirname, 'dist')));
 };
 
 
