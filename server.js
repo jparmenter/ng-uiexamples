@@ -12,7 +12,7 @@ var app = module.exports = express();
 *
 */
 var index = function(req, res){
-  res.render('index');
+  res.render('index.html');
 };
 
 var partials = function (req, res) {
@@ -26,6 +26,7 @@ var partials = function (req, res) {
 
 // all environments
 app.set('port', process.env.PORT || 5000);
+app.engine('.html', require('jade').renderFile);
 app.set('views', __dirname + '/views');
 app.use(express.logger('dev'));
 app.use(express.bodyParser());

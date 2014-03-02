@@ -2,7 +2,8 @@
   "name": "nguiexamples",
   "version": "0.0.0",
   "dependencies": {
-    "express": "3.4.8"
+    "express": "3.4.8",
+    "jade": "1.2.0"
     },
   "devDependencies": {
     "grunt": "~0.4.1",
