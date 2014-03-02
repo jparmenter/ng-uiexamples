@@ -40,6 +40,7 @@ if (app.get('env') === 'development') {
 
 // production only
 if (app.get('env') === 'production') {
+  app.use(express.errorHandler());
   app.use(express.static(path.join(__dirname, 'dist')));
 };
 
