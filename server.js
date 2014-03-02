@@ -27,7 +27,7 @@ var partials = function (req, res) {
 // all environments
 app.set('port', process.env.PORT || 5000);
 app.engine('.html', require('jade').renderFile);
-app.set('views', __dirname + '/views');
+app.set('views', __dirname + '/');
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
