@@ -26,13 +26,11 @@ var partials = function (req, res) {
 
 // all environments
 app.set('port', process.env.PORT || 5000);
-app.set('view engine', 'jade');
-app.engine('.html', require('jade').renderFile);
 app.set('views', __dirname + '/views');
+app.set('view engine', 'jade');
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
-app.use(app.router);
 
 // development only
 if (app.get('env') === 'development') {
@@ -45,7 +43,7 @@ if (app.get('env') === 'production') {
   app.use(express.errorHandler());
   app.use(express.static(path.join(__dirname, 'dist')));
 };
-
+app.use(app.router);
 
 /**
  * Routes
