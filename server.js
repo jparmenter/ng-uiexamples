@@ -12,7 +12,7 @@ var app = module.exports = express();
 *
 */
 var index = function(req, res){
-  res.render('index.html');
+  res.render('index');
 };
 
 var partials = function (req, res) {
