@@ -6,7 +6,7 @@ angular.module('ngUiexamplesApp', [
   'ngSanitize',
   'ngRoute'
 ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -15,4 +15,5 @@ angular.module('ngUiexamplesApp', [
       .otherwise({
         redirectTo: '/'
       });
+      $locationProvider.html5Mode(true);
   });
